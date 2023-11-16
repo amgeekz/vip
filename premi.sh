@@ -14,6 +14,7 @@ REDBG="\033[41;37m"
 OK="${Green}--->${FONT}"
 ERROR="${RED}[ERROR]${FONT}"
 GRAY="\e[1;30m"
+WHITE='\033[0;37m'
 NC='\e[0m'
 red='\e[1;31m'
 green='\e[0;32m'
@@ -126,12 +127,11 @@ Info="${GREEN}Active${NC}"
 Error="${RED}Expired${NC}"
 if [[ "$certifacate" -le "0" ]]; then
 sts="${Error}"
-restart_system
 echo -e " $BLUE╭──────────────────────────────────────────────────────────╮${NC}"
-echo -e " $BLUE│$NC$r • $NC$WHITE IP VPS Kamu Expired/Belum Terdaftar$NC"
-echo -e " $BLUE│$NC$r • $NC$WHITE Silahkan Contact Admin Untuk Beli/Perpanjang"
+echo -e " $BLUE│$NC$RED    IP address not authorized by admin$NC"
+echo -e " $BLUE│$NC$RED    Please contact admin to rent this script$NC"
 echo -e " $BLUE│$NC$r • $NC$WHITE Whatsapp$NC  ${WHITE}:$GREEN 6285649455626$NC"
-echo -e " $BLUE│$NC$r • $NC$WHITE Telegram  :$NC $GREEN$exp amgeekzssh$NC "
+echo -e " $BLUE│$NC$r • $NC$WHITE Telegram  :$NC $GREEN amgeekzssh$NC "
 echo -e " $BLUE╰──────────────────────────────────────────────────────────╯${NC}"
 sleep 3
 exit 1
