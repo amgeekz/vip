@@ -131,7 +131,7 @@ echo -e " $BLUE╭────────────────────�
 echo -e " $BLUE│$NC$RED    IP address not authorized by admin $NC"
 echo -e " $BLUE│$NC$RED    Please contact admin to rent this script $NC"
 echo -e " $BLUE│$NC$r • $NC$WHITE Whatsapp :$NC $GREEN 6285649455626$NC"
-echo -e " $BLUE│$NC$r • $NC$WHITE Telegram  :$NC $GREEN amgeekzssh$NC"
+echo -e " $BLUE│$NC$r • $NC$WHITE Telegram :$NC $GREEN amgeekzssh$NC"
 echo -e " $BLUE╰──────────────────────────────────────────────────────────╯${NC}"
 sleep 3
 exit 1
