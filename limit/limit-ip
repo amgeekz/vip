@@ -3,14 +3,30 @@
 function send_log(){
 CHATID=$(grep -E "^#bot# " "/etc/bot/.bot.db" | cut -d ' ' -f 3)
 KEY=$(grep -E "^#bot# " "/etc/bot/.bot.db" | cut -d ' ' -f 2)
+jum=$(cat /var/log/xray/access.log | grep -w "$akun" | tail -n 500 | cut -d " " -f 3 | sed 's/tcp://g' | cut -d ":" -f 1 | grep -w "$ip" | sort | uniq)
+if [[ "$jum" = "$ip" ]]; then
+echo "$jum" >> /tmp/ipvmess.txt
+else
+echo "$ip" >> /tmp/other.txt
+fi
+jum2=$(cat /tmp/ipvmess.txt)
+sed -i "/$jum2/d" /tmp/other.txt > /dev/null 2>&1
+done
+jum=$(cat /tmp/ipvmess.txt)
+if [[ -z "$jum" ]]; then
+echo > /dev/null
+else
 TIME="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
+iplimit=$(cat /etc/kyt/limit/vmess/ip/${akun})
+jum2=$(cat /tmp/ipvmess.txt | wc -l)
 TEXT="
 <code>────────────────────</code>
 <b>⚠️ NOTIFICATIONS MULTI LOGIN ⚠️</b>
 <code>────────────────────</code>
 <code>Username  : </code><code>$user</code>
-<code>Limit Ip    : </code><code>$data</code>
+<code>Limit Ip    : </code><code>$iplimit</code>
+<code>Login Ip    : </code><code>$jum2</code>
 <code>────────────────────</code>
 "
 curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
@@ -98,6 +114,8 @@ vlip
 elif [[ ${1} == "trip" ]]; then
 trip
 fi
+
+
 
 
 
