@@ -4,7 +4,7 @@ apt install jq curl -y
 #read -p "Masukan Domain (contoh : Dragon)" domen
 DOMAIN=amgeekz.tech
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
-dns=${sub}.amgeekz.tech
+dns=${sub}.geekzssh.cloud
 CF_ID=inodsanjaya1998@gmail.com
 CF_KEY=c2dd68b68b4b6cdb41823d085f70a86c1545c
 set -euo pipefail
@@ -40,3 +40,4 @@ echo "$dns" > /etc/v2ray/domain
 echo "$dns" > /etc/xray/scdomain
 echo "IP=$dns" > /var/lib/kyt/ipvps.conf
 cd
+
