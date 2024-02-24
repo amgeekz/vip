@@ -1,14 +1,14 @@
 
 ### INSTALL SCRIPT 
 ```
-apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://scp.amgeekz.tech/premi.sh && chmod +x premi.sh && ./premi.sh
+apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://scp.geekzssh.cloud/premi.sh && chmod +x premi.sh && ./premi.sh
 
 ```
 
 ### PERINTAH UPDATE
 ```
 
-wget https://scp.amgeekz.tech/update.sh && chmod +x update.sh && ./update.sh
+wget https://scp.geekzssh.cloud/update.sh && chmod +x update.sh && ./update.sh
 
 ```
 
